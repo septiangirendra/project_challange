@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -122,6 +126,26 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
+
+        // clickable pada button di custom header
+        NavigationView navigationView = findViewById(R.id.navView);
+        View headerView = getLayoutInflater().inflate(R.layout.nav_header_layout,
+                navigationView, false);
+        navigationView.addHeaderView(headerView);
+
+        Button btn_kunjungi = headerView.findViewById(R.id.btn_kunjungi);
+        btn_kunjungi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "Test Header Click",
+                        Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(android.content.Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://github.com/septiangirendra"));
+                startActivity(intent);
+            }
+        });
+
+
     }
 
     private void callFragment(Fragment fragment) {

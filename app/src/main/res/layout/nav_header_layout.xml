@@ -35,7 +35,7 @@
                     android:layout_height="wrap_content"
                     android:text="Septian Girendra Wardhani"
                     android:textColor="@color/white"
-                    android:textSize="24sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -45,6 +45,16 @@
                     android:textColor="@color/white"
                     android:textSize="10sp"
                     android:textStyle="bold"/>
+
+                <Button
+                    android:id="@+id/btn_kunjungi"
+                    android:layout_width="150dp"
+                    android:layout_height="48dp"
+                    android:text="Kunjungi Saya"
+                    android:textAlignment="center"
+                    android:textColor="#FFFFFF"
+                    android:textSize="8sp"
+                    android:textStyle="bold" />
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
